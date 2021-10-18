@@ -121,8 +121,6 @@ extension MapViewController: UISearchResultsUpdating {
                     } else {
                         self.resultsVC.update(with: places)
                     }
-                    
-                    
                 }
             case .failure(let error):
                 print(error)
@@ -135,20 +133,6 @@ extension MapViewController: UISearchResultsUpdating {
 extension MapViewController: ResultsViewControllerDelegate {
     func toggleTableView(hide: Bool) {
         resultsVC.hideTable(!showMap)
-    }
-    
-    func didTapPlace(with location: CLLocation) {
-        searchVC.dismiss(animated: true, completion: nil)
-        
-        // Remove all map pins
-        mapView.removeAnnotations(mapView.annotations)
-        
-        // Add a pin to the map
-        let pin = MKPointAnnotation()
-        pin.coordinate = location.coordinate
-        mapView.addAnnotation(pin)
-        mapView.setRegion(MKCoordinateRegion(center: location.coordinate,
-                                             span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)), animated: true)
     }
     
     func addPlacesToMap(with locations: [Place]) {

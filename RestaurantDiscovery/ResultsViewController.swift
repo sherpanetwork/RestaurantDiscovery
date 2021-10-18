@@ -10,7 +10,6 @@ import SwiftUI
 import UIKit
 
 protocol ResultsViewControllerDelegate: AnyObject {
-    func didTapPlace(with location: CLLocation)
     func addPlacesToMap(with locations: [Place])
     func toggleTableView(hide: Bool)
 }

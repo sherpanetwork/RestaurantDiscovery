@@ -38,6 +38,8 @@
 		C27C64D4271D327A005A6BD0 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		C27C64D6271D3B79005A6BD0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C27C64D7271D3B79005A6BD0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		C27C64D8271D3D49005A6BD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		C27C64DB271D3D4D005A6BD0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/Info.plist; sourceTree = "<group>"; };
 		C2C42CA72717BF6600D1574B /* RestaurantDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C42CAA2717BF6600D1574B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2C42CAC2717BF6600D1574B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +47,6 @@
 		C2C42CB12717BF6600D1574B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2C42CB32717BF6700D1574B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2C42CB62717BF6700D1574B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C2C42CB82717BF6700D1574B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C42CC12717CEB300D1574B /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		C2C42CC32717CEEB00D1574B /* GooglePlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesController.swift; sourceTree = "<group>"; };
 		C2FC277E271CB15E00759ABB /* GooglePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
@@ -86,7 +87,7 @@
 			children = (
 				C2C42CAA2717BF6600D1574B /* AppDelegate.swift */,
 				C2C42CB32717BF6700D1574B /* Assets.xcassets */,
-				C2C42CB82717BF6700D1574B /* Info.plist */,
+				C27C64D9271D3D49005A6BD0 /* Info.plist */,
 				C2C42CB52717BF6700D1574B /* LaunchScreen.storyboard */,
 				C2C42CAC2717BF6600D1574B /* SceneDelegate.swift */,
 			);
@@ -286,6 +287,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C27C64D9271D3D49005A6BD0 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C27C64D8271D3D49005A6BD0 /* Base */,
+				C27C64DB271D3D4D005A6BD0 /* es */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
 		C2C42CB02717BF6600D1574B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,7 +445,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 763VNR6BLU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RestaurantDiscovery/ProjectFiles/Info.plist;
+				INFOPLIST_FILE = RestaurantDiscovery/ProjectFiles/Base.lproj/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "AllTrails At Lunch";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show near by restaurants.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,7 +476,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 763VNR6BLU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RestaurantDiscovery/ProjectFiles/Info.plist;
+				INFOPLIST_FILE = RestaurantDiscovery/ProjectFiles/Base.lproj/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "AllTrails At Lunch";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show near by restaurants.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
