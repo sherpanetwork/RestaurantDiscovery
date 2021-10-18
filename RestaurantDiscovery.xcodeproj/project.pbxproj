@@ -8,31 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		178DD19EA42068A6629138A5 /* Pods_RestaurantDiscovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2B188913AA73D5DAA3B441 /* Pods_RestaurantDiscovery.framework */; };
+		C22FC30C2719F763006CC0E3 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22FC30B2719F763006CC0E3 /* Place.swift */; };
 		C2C42CAB2717BF6600D1574B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CAA2717BF6600D1574B /* AppDelegate.swift */; };
 		C2C42CAD2717BF6600D1574B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CAC2717BF6600D1574B /* SceneDelegate.swift */; };
-		C2C42CAF2717BF6600D1574B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CAE2717BF6600D1574B /* ViewController.swift */; };
+		C2C42CAF2717BF6600D1574B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CAE2717BF6600D1574B /* MapViewController.swift */; };
 		C2C42CB22717BF6600D1574B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C42CB02717BF6600D1574B /* Main.storyboard */; };
 		C2C42CB42717BF6700D1574B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C42CB32717BF6700D1574B /* Assets.xcassets */; };
 		C2C42CB72717BF6700D1574B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C42CB52717BF6700D1574B /* LaunchScreen.storyboard */; };
 		C2C42CC02717CE6100D1574B /* Anchorage in Frameworks */ = {isa = PBXBuildFile; productRef = C2C42CBF2717CE6100D1574B /* Anchorage */; };
 		C2C42CC22717CEB300D1574B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CC12717CEB300D1574B /* ResultsViewController.swift */; };
 		C2C42CC42717CEEB00D1574B /* GooglePlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CC32717CEEB00D1574B /* GooglePlacesController.swift */; };
+		C2FC277F271CB15E00759ABB /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC277E271CB15E00759ABB /* GooglePlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50EC16653D1E3BD7AF4D9084 /* Pods-RestaurantDiscovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantDiscovery.release.xcconfig"; path = "Target Support Files/Pods-RestaurantDiscovery/Pods-RestaurantDiscovery.release.xcconfig"; sourceTree = "<group>"; };
 		5B2B188913AA73D5DAA3B441 /* Pods_RestaurantDiscovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestaurantDiscovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9DAE6A679C8BD30B6187DC4 /* Pods-RestaurantDiscovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantDiscovery.debug.xcconfig"; path = "Target Support Files/Pods-RestaurantDiscovery/Pods-RestaurantDiscovery.debug.xcconfig"; sourceTree = "<group>"; };
+		C22FC30B2719F763006CC0E3 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C2C42CA72717BF6600D1574B /* RestaurantDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C42CAA2717BF6600D1574B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2C42CAC2717BF6600D1574B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C2C42CAE2717BF6600D1574B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2C42CAE2717BF6600D1574B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C2C42CB12717BF6600D1574B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2C42CB32717BF6700D1574B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2C42CB62717BF6700D1574B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2C42CB82717BF6700D1574B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C42CC12717CEB300D1574B /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		C2C42CC32717CEEB00D1574B /* GooglePlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesController.swift; sourceTree = "<group>"; };
+		C2FC277E271CB15E00759ABB /* GooglePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C22FC3092719F708006CC0E3 /* ProjectFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C2C42CAA2717BF6600D1574B /* AppDelegate.swift */,
+				C2C42CB32717BF6700D1574B /* Assets.xcassets */,
+				C2C42CB82717BF6700D1574B /* Info.plist */,
+				C2C42CB52717BF6700D1574B /* LaunchScreen.storyboard */,
+				C2C42CAC2717BF6600D1574B /* SceneDelegate.swift */,
+			);
+			path = ProjectFiles;
+			sourceTree = "<group>";
+		};
+		C22FC30A2719F749006CC0E3 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C22FC30B2719F763006CC0E3 /* Place.swift */,
+				C2FC277E271CB15E00759ABB /* GooglePlace.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		C2C42C9E2717BF6600D1574B = {
 			isa = PBXGroup;
 			children = (
@@ -86,13 +111,10 @@
 		C2C42CA92717BF6600D1574B /* RestaurantDiscovery */ = {
 			isa = PBXGroup;
 			children = (
-				C2C42CAA2717BF6600D1574B /* AppDelegate.swift */,
-				C2C42CAC2717BF6600D1574B /* SceneDelegate.swift */,
-				C2C42CAE2717BF6600D1574B /* ViewController.swift */,
+				C22FC30A2719F749006CC0E3 /* Objects */,
+				C22FC3092719F708006CC0E3 /* ProjectFiles */,
+				C2C42CAE2717BF6600D1574B /* MapViewController.swift */,
 				C2C42CB02717BF6600D1574B /* Main.storyboard */,
-				C2C42CB32717BF6700D1574B /* Assets.xcassets */,
-				C2C42CB52717BF6700D1574B /* LaunchScreen.storyboard */,
-				C2C42CB82717BF6700D1574B /* Info.plist */,
 				C2C42CC12717CEB300D1574B /* ResultsViewController.swift */,
 				C2C42CC32717CEEB00D1574B /* GooglePlacesController.swift */,
 			);
@@ -221,10 +243,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C42CC42717CEEB00D1574B /* GooglePlacesController.swift in Sources */,
-				C2C42CAF2717BF6600D1574B /* ViewController.swift in Sources */,
+				C2C42CAF2717BF6600D1574B /* MapViewController.swift in Sources */,
 				C2C42CAB2717BF6600D1574B /* AppDelegate.swift in Sources */,
+				C22FC30C2719F763006CC0E3 /* Place.swift in Sources */,
 				C2C42CAD2717BF6600D1574B /* SceneDelegate.swift in Sources */,
 				C2C42CC22717CEB300D1574B /* ResultsViewController.swift in Sources */,
+				C2FC277F271CB15E00759ABB /* GooglePlace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +400,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 763VNR6BLU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RestaurantDiscovery/Info.plist;
+				INFOPLIST_FILE = RestaurantDiscovery/ProjectFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "AllTrails At Lunch";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show near by restaurants.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -405,7 +431,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 763VNR6BLU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RestaurantDiscovery/Info.plist;
+				INFOPLIST_FILE = RestaurantDiscovery/ProjectFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "AllTrails At Lunch";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show near by restaurants.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

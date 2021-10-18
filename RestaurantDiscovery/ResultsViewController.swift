@@ -10,12 +10,15 @@ import UIKit
 
 protocol ResultsViewControllerDelegate: AnyObject {
     func didTapPlace(with location: CLLocation)
+    func addPlacesToMap(with locations: [Place])
+    func toggleTableView(hide: Bool)
 }
 
 class ResultsViewController: UIViewController {
     
     weak var delegate: ResultsViewControllerDelegate?
     var places = [Place]()
+    var shouldHideTable: Bool = false
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -39,9 +42,16 @@ class ResultsViewController: UIViewController {
     }
     
     func update(with places: [Place]) {
-        self.tableView.isHidden = false
+        if shouldHideTable {
+            self.tableView.isHidden = false
+        }
         self.places = places
         tableView.reloadData()
+    }
+    
+    func hideTable(_ hide: Bool) {
+        shouldHideTable = hide
+        self.tableView.isHidden = !hide
     }
     
 }
@@ -58,7 +68,9 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.tableView.isHidden = true
+//        if shouldHideTable {
+//            self.tableView.isHidden = true
+//                }
         
         print(places[indexPath.row])
         let place = places[indexPath.row]

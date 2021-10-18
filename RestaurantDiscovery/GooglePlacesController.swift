@@ -34,14 +34,14 @@ class GooglePlacesController {
             }
             
             let places = restaurants.compactMap({
-                Place(name: $0.attributedFullText.string, ID: $0.placeID)
+                Place(ID: $0.placeID, name: $0.attributedPrimaryText.string, address: $0.attributedFullText.string)
             })
             completion(.success(places))
             
         }
     }
     
-    func resolveLocation(for place: Place, completion: @escaping (Result<CLLocation, Error>) -> Void){
+    func resolveLocation(for place: Place, completion: @escaping (Result<CLLocation, Error>) -> Void) {
         client.fetchPlace(fromPlaceID: place.ID, placeFields: .coordinate, sessionToken: nil) { googlePlace, error in
             guard let googlePlace = googlePlace, error == nil else {
                 completion(.failure(PlacesError.failedToFind))
@@ -54,11 +54,23 @@ class GooglePlacesController {
         }
     }
     
-}
-
-struct Place {
-    let name: String
-    let ID: String
+    /// Get more info from GooglePlace API using a PlaceID.
+    /// - Parameters:
+    ///   - placeID: ID of the deisgned place.
+    ///   - completion: The returned object from a fetchPlace using the given PlaceID.
+    func allInfo(for placeID: String, completion: @escaping (Result<GooglePlace, Error>) -> Void) {
+        client.fetchPlace(fromPlaceID: placeID, placeFields: .all, sessionToken: nil) { googlePlace, error in
+            guard let googlePlace = googlePlace, error == nil else {
+                completion(.failure(PlacesError.failedToFind))
+                return
+            }
+            
+            let place = GooglePlace(placeID: googlePlace.placeID ?? placeID, name: googlePlace.name, address: googlePlace.formattedAddress, phoneNumber: googlePlace.phoneNumber, location: googlePlace.coordinate, rating: googlePlace.rating, userRatingsTotal: googlePlace.userRatingsTotal)
+            completion(.success(place))
+            
+        }
+    }
+    
 }
 
 enum PlacesError: Error {
