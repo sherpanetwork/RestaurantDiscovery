@@ -1,0 +1,6 @@
+framework module Pods_RestaurantDiscovery {
+  umbrella header "Pods-RestaurantDiscovery-umbrella.h"
+
+  export *
+  module * { export * }
+}
