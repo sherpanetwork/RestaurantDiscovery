@@ -103,7 +103,8 @@ class MapViewController: UIViewController {
 extension MapViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let query = searchController.searchBar.text
+        guard let query = searchController.searchBar.text,
+              !query.trimmingCharacters(in: .whitespaces).isEmpty
         else { return }
         
         searchOn(query: query)
