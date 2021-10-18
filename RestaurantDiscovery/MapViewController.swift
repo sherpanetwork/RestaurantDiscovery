@@ -22,7 +22,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "AllTrails at Lunch"
+        title = NSLocalizedString("AllTrails at Lunch", comment: "Title for the app")
         view.addSubview(mapView)
         
         searchVC.searchBar.backgroundColor = .secondarySystemBackground

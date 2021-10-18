@@ -21,20 +21,22 @@ struct DetailView: View {
                 
             VStack(alignment: .leading, spacing: 4) {
                 
-                Text(viewModel.place.name ?? "MISSING")
+                Text(viewModel.place.name ?? missing)
                     .font(.title)
                 HStack {
                     RatingView(rating: Int(viewModel.place.rating))
                     Text("(\(viewModel.place.userRatingsTotal))")
                         .font(.footnote)
                 }
-                Text(viewModel.place.phoneNumber ?? "MISSING")
-                Text(viewModel.place.address ?? "MISSING")
+                Text(viewModel.place.phoneNumber ?? missing)
+                Text(viewModel.place.address ?? missing)
                 
             }
         }
     }
 }
+
+let missing = NSLocalizedString("Missing", comment: "Message if info is missing")
 
 struct Detail_Previews: PreviewProvider {
     static var previews: some View {
