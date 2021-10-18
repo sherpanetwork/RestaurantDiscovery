@@ -12,10 +12,6 @@ class GooglePlacesController {
     static let shared = GooglePlacesController()
     private let client = GMSPlacesClient.shared()
     
-    init() {
-        
-    }
-    
     public func findPlaces(query: String, completion: @escaping (Result<[Place], Error>) -> Void) {
         let filter = GMSAutocompleteFilter()
         filter.type = .establishment
@@ -56,7 +52,7 @@ class GooglePlacesController {
     
     /// Get more info from GooglePlace API using a PlaceID.
     /// - Parameters:
-    ///   - placeID: ID of the deisgned place.
+    ///   - placeID: ID of the desired place.
     ///   - completion: The returned object from a fetchPlace using the given PlaceID.
     func allInfo(for placeID: String, completion: @escaping (Result<GooglePlace, Error>) -> Void) {
         client.fetchPlace(fromPlaceID: placeID, placeFields: .all, sessionToken: nil) { googlePlace, error in

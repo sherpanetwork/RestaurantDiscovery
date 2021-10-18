@@ -18,7 +18,7 @@ class ResultsViewController: UIViewController {
     
     weak var delegate: ResultsViewControllerDelegate?
     var places = [Place]()
-    var shouldHideTable: Bool = false
+    var shouldHideTable = true
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -42,16 +42,15 @@ class ResultsViewController: UIViewController {
     }
     
     func update(with places: [Place]) {
-        if shouldHideTable {
-            self.tableView.isHidden = false
-        }
+        self.tableView.isHidden = shouldHideTable
         self.places = places
         tableView.reloadData()
     }
     
     func hideTable(_ hide: Bool) {
         shouldHideTable = hide
-        self.tableView.isHidden = !hide
+        self.tableView.isHidden = hide
+        tableView.reloadData()
     }
     
 }
@@ -68,11 +67,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if shouldHideTable {
-//            self.tableView.isHidden = true
-//                }
         
-        print(places[indexPath.row])
         let place = places[indexPath.row]
         GooglePlacesController.shared.resolveLocation(for: place) { [weak self] result in
             switch result {

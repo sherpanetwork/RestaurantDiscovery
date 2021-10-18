@@ -91,7 +91,7 @@ class MapViewController: UIViewController {
             fullString.append(NSAttributedString(string: " Map"))
             toggleButton.setAttributedTitle(fullString, for: .normal)
         }
-//        toggleButton.setTitle(showMap ? "\(image) List" : "\(image) Map", for: .normal)
+        
     }
     
 }
@@ -99,14 +99,8 @@ class MapViewController: UIViewController {
 extension MapViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let query = searchController.searchBar.text,
-              !query.trimmingCharacters(in: .whitespaces).isEmpty//,
-//              let resultsVC = searchController.searchResultsController as? ResultsViewController
-        else {
-            return
-        }
-        
-//        resultsVC.delegate = self
+        guard let query = searchController.searchBar.text
+        else { return }
         
         GooglePlacesController.shared.findPlaces(query: query) { result in
             switch result {
@@ -115,9 +109,9 @@ extension MapViewController: UISearchResultsUpdating {
                 DispatchQueue.main.async {
                     self.resultsVC.hideTable(self.showMap)
                     if self.showMap {
-                        self.resultsVC.update(with: places)
-                    } else {
                         self.addPlacesToMap(with: places)
+                    } else {
+                        self.resultsVC.update(with: places)
                     }
                     
                     
@@ -135,7 +129,6 @@ extension MapViewController: ResultsViewControllerDelegate {
         resultsVC.hideTable(!showMap)
     }
     
-    
     func didTapPlace(with location: CLLocation) {
         searchVC.dismiss(animated: true, completion: nil)
         
@@ -148,7 +141,6 @@ extension MapViewController: ResultsViewControllerDelegate {
         mapView.addAnnotation(pin)
         mapView.setRegion(MKCoordinateRegion(center: location.coordinate,
                                              span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)), animated: true)
-        
     }
     
     func addPlacesToMap(with locations: [Place]) {
@@ -165,8 +157,7 @@ extension MapViewController: ResultsViewControllerDelegate {
                         pin.title = location.name
                         pin.coordinate = location.location
                         self?.mapView.addAnnotation(pin)
-                        self?.mapView.setRegion(MKCoordinateRegion(center: location.location,
-                                                             span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)), animated: true)
+                        self?.mapView.showAnnotations(self?.mapView.annotations ?? [pin], animated: true)
                     }
                 case .failure(let error):
                     print(error)
