@@ -74,7 +74,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         GooglePlacesController.shared.allInfo(for: place.ID) { [weak self] result in
             switch result {
             case .success(let googlePlace):
-                print(googlePlace)
                 DispatchQueue.main.async {
                     // Create swiftUI coordinator with it's viewModel.
                     let coordinator = DetailViewCoordinator(viewModel: DetailViewModel(place: googlePlace))

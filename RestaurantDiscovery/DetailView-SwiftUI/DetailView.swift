@@ -13,16 +13,25 @@ struct DetailView: View {
     let coordinator: DetailViewCoordinator
     
     var body: some View {
-        VStack {
-            
-            Text(viewModel.place.name ?? "MISSING")
-            Text(viewModel.place.address ?? "MISSING")
-            Text(viewModel.place.phoneNumber ?? "MISSING")
-            HStack {
-                Text("Rating: \(viewModel.place.rating)")
-                Text("Reviews: \(viewModel.place.userRatingsTotal)")
+        HStack {
+            Image("detailsPlaceholder")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 120, height: 120, alignment: .center)
+                
+            VStack(alignment: .leading, spacing: 4) {
+                
+                Text(viewModel.place.name ?? "MISSING")
+                    .font(.title)
+                HStack {
+                    RatingView(rating: Int(viewModel.place.rating))
+                    Text("(\(viewModel.place.userRatingsTotal))")
+                        .font(.footnote)
+                }
+                Text(viewModel.place.phoneNumber ?? "MISSING")
+                Text(viewModel.place.address ?? "MISSING")
+                
             }
-            
         }
     }
 }

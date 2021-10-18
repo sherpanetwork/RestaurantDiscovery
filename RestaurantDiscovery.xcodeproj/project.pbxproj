@@ -13,6 +13,7 @@
 		C27C64D0271D1035005A6BD0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C64CD271D1035005A6BD0 /* DetailView.swift */; };
 		C27C64D1271D1035005A6BD0 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C64CE271D1035005A6BD0 /* DetailViewModel.swift */; };
 		C27C64D3271D10C0005A6BD0 /* SwiftUIExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C64D2271D10C0005A6BD0 /* SwiftUIExtras.swift */; };
+		C27C64D5271D327A005A6BD0 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27C64D4271D327A005A6BD0 /* RatingView.swift */; };
 		C2C42CAB2717BF6600D1574B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CAA2717BF6600D1574B /* AppDelegate.swift */; };
 		C2C42CAD2717BF6600D1574B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CAC2717BF6600D1574B /* SceneDelegate.swift */; };
 		C2C42CAF2717BF6600D1574B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C42CAE2717BF6600D1574B /* MapViewController.swift */; };
@@ -34,6 +35,7 @@
 		C27C64CD271D1035005A6BD0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C27C64CE271D1035005A6BD0 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		C27C64D2271D10C0005A6BD0 /* SwiftUIExtras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtras.swift; sourceTree = "<group>"; };
+		C27C64D4271D327A005A6BD0 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		C2C42CA72717BF6600D1574B /* RestaurantDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C42CAA2717BF6600D1574B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2C42CAC2717BF6600D1574B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,15 +100,16 @@
 			path = Objects;
 			sourceTree = "<group>";
 		};
-		C27C64CB271D1014005A6BD0 /* DetailView */ = {
+		C27C64CB271D1014005A6BD0 /* DetailView-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
 				C27C64CC271D1035005A6BD0 /* DetailViewCoordinator.swift */,
 				C27C64CD271D1035005A6BD0 /* DetailView.swift */,
 				C27C64CE271D1035005A6BD0 /* DetailViewModel.swift */,
 				C27C64D2271D10C0005A6BD0 /* SwiftUIExtras.swift */,
+				C27C64D4271D327A005A6BD0 /* RatingView.swift */,
 			);
-			path = DetailView;
+			path = "DetailView-SwiftUI";
 			sourceTree = "<group>";
 		};
 		C2C42C9E2717BF6600D1574B = {
@@ -130,7 +133,7 @@
 		C2C42CA92717BF6600D1574B /* RestaurantDiscovery */ = {
 			isa = PBXGroup;
 			children = (
-				C27C64CB271D1014005A6BD0 /* DetailView */,
+				C27C64CB271D1014005A6BD0 /* DetailView-SwiftUI */,
 				C22FC3092719F708006CC0E3 /* ProjectFiles */,
 				C22FC30A2719F749006CC0E3 /* Objects */,
 				C2C42CAE2717BF6600D1574B /* MapViewController.swift */,
@@ -265,6 +268,7 @@
 				C27C64CF271D1035005A6BD0 /* DetailViewCoordinator.swift in Sources */,
 				C27C64D0271D1035005A6BD0 /* DetailView.swift in Sources */,
 				C2C42CC42717CEEB00D1574B /* GooglePlacesController.swift in Sources */,
+				C27C64D5271D327A005A6BD0 /* RatingView.swift in Sources */,
 				C27C64D3271D10C0005A6BD0 /* SwiftUIExtras.swift in Sources */,
 				C27C64D1271D1035005A6BD0 /* DetailViewModel.swift in Sources */,
 				C2C42CAF2717BF6600D1574B /* MapViewController.swift in Sources */,
