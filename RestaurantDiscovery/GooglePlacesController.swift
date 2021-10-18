@@ -37,19 +37,6 @@ class GooglePlacesController {
         }
     }
     
-    func resolveLocation(for place: Place, completion: @escaping (Result<CLLocation, Error>) -> Void) {
-        client.fetchPlace(fromPlaceID: place.ID, placeFields: .coordinate, sessionToken: nil) { googlePlace, error in
-            guard let googlePlace = googlePlace, error == nil else {
-                completion(.failure(PlacesError.failedToFind))
-                return
-            }
-            
-            let location = CLLocation(latitude: googlePlace.coordinate.latitude, longitude: googlePlace.coordinate.longitude)
-            completion(.success(location))
-            
-        }
-    }
-    
     /// Get more info from GooglePlace API using a PlaceID.
     /// - Parameters:
     ///   - placeID: ID of the desired place.

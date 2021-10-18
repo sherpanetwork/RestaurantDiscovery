@@ -7,6 +7,7 @@
 
 import Anchorage
 import MapKit
+import SwiftUI
 import UIKit
 
 class MapViewController: UIViewController {
@@ -33,11 +34,13 @@ class MapViewController: UIViewController {
         locationManager?.requestWhenInUseAuthorization()
         
         mapView.showsUserLocation = true
+        mapView.delegate = self
         
         floatingButton()
         
         guard let newResultsVC = searchVC.searchResultsController as? ResultsViewController
         else { return }
+        
         resultsVC = newResultsVC
         resultsVC.delegate = self
         resultsVC.hideTable(self.showMap)
@@ -45,6 +48,7 @@ class MapViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         mapView.userTrackingMode = MKUserTrackingMode.follow
+        searchOn(query: "restaurant")
     }
     
     override func viewDidLayoutSubviews() {
@@ -102,10 +106,14 @@ extension MapViewController: UISearchResultsUpdating {
         guard let query = searchController.searchBar.text
         else { return }
         
+        searchOn(query: query)
+        
+    }
+    
+    func searchOn(query: String) {
         GooglePlacesController.shared.findPlaces(query: query) { result in
             switch result {
             case .success(let places):
-                print(places)
                 DispatchQueue.main.async {
                     self.resultsVC.hideTable(self.showMap)
                     if self.showMap {
@@ -155,6 +163,7 @@ extension MapViewController: ResultsViewControllerDelegate {
                     DispatchQueue.main.async {
                         let pin = MKPointAnnotation()
                         pin.title = location.name
+                        pin.subtitle = location.placeID // Hack to get id when user taps a pin.
                         pin.coordinate = location.location
                         self?.mapView.addAnnotation(pin)
                         self?.mapView.showAnnotations(self?.mapView.annotations ?? [pin], animated: true)
@@ -175,6 +184,33 @@ extension MapViewController: CLLocationManagerDelegate {
         if status == .authorizedWhenInUse {
             print("User gave app authorization")
         }
+    }
+    
+}
+
+extension MapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let placeID = view.annotation?.subtitle
+        else { return }
+        
+        if let placeID = placeID {
+            GooglePlacesController.shared.allInfo(for: placeID) { [weak self] result in
+                switch result {
+                case .success(let googlePlace):
+                    DispatchQueue.main.async {
+                        // Create swiftUI coordinator with it's viewModel.
+                        let coordinator = DetailViewCoordinator(viewModel: DetailViewModel(place: googlePlace))
+                        // Create a UIHostingController in order to insert the SwiftUI view into UIKit.
+                        let swiftUIDetailView = UIHostingController(rootView: coordinator.start())
+                        self?.present(swiftUIDetailView, animated: true, completion: nil)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
     }
     
 }

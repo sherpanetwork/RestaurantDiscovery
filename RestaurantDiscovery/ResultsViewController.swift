@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import SwiftUI
 import UIKit
 
 protocol ResultsViewControllerDelegate: AnyObject {
@@ -69,11 +70,17 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let place = places[indexPath.row]
-        GooglePlacesController.shared.resolveLocation(for: place) { [weak self] result in
+        
+        GooglePlacesController.shared.allInfo(for: place.ID) { [weak self] result in
             switch result {
-            case .success(let coordinate):
+            case .success(let googlePlace):
+                print(googlePlace)
                 DispatchQueue.main.async {
-                    self?.delegate?.didTapPlace(with: coordinate)
+                    // Create swiftUI coordinator with it's viewModel.
+                    let coordinator = DetailViewCoordinator(viewModel: DetailViewModel(place: googlePlace))
+                    // Create a UIHostingController in order to insert the SwiftUI view into UIKit.
+                    let swiftUIDetailView = UIHostingController(rootView: coordinator.start())
+                    self?.present(swiftUIDetailView, animated: true, completion: nil)
                 }
             case .failure(let error):
                 print(error)
